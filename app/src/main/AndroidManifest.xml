@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Required on Android 11+ so the app drawer can list all installed
+         launchable apps. Note: publishing on Google Play requires completing
+         the QUERY_ALL_PACKAGES declaration form. -->
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+
+    <application
+        android:label="@string/app_name"
+        android:icon="@drawable/ic_launcher_tile"
+        android:theme="@style/Theme.MetroLauncher"
+        android:allowBackup="true"
+        android:supportsRtl="true">
+
+        <!-- HOME + DEFAULT makes this activity appear in the system's
+             "default home app" picker, i.e. it behaves as a real launcher. -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:stateNotNeeded="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
